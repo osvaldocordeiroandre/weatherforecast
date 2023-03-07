@@ -3,7 +3,7 @@ import './index.css'
 
 import { useState } from 'react'
 
-import Logo from '../src/Images/weather.png'
+import Logo from '../src/Images/weather-nb.png'
 
 export default function App() {
 
@@ -19,7 +19,7 @@ export default function App() {
   const handlesearch = () => {
     fetch(`https://api.weatherapi.com/v1/current.json?key=d861a046677f4922b2844621230703&q=${city}&lang=pt`)
     .then((response) => {
-      if(response.status == 200){
+      if(response.status === 200){
         return response.json()
       }
     }) 
@@ -58,7 +58,7 @@ export default function App() {
 
               <div>
 
-                  <img src={weatherForecast.current.condition.icon} alt="" />
+                  <img src={weatherForecast.current.condition.icon} alt="Logo de uma nuvem com um sol" />
 
               </div>
 
