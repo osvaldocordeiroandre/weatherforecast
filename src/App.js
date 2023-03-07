@@ -17,7 +17,7 @@ export default function App() {
   }
 
   const handlesearch = () => {
-    fetch(`http://api.weatherapi.com/v1/current.json?key=d861a046677f4922b2844621230703&q=${city}&lang=pt`)
+    fetch(`https://api.weatherapi.com/v1/current.json?key=d861a046677f4922b2844621230703&q=${city}&lang=pt`)
     .then((response) => {
       if(response.status == 200){
         return response.json()
