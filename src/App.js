@@ -65,6 +65,7 @@ export default function App() {
               <div className='resposta'>
 
                   <h2>Cidade: { weatherForecast.location.name }</h2>
+                  <h3>País: { weatherForecast.location.country }</h3>
                   <h3> Hoje o dia está: { weatherForecast.current.condition.text } </h3>
                   <p className='lead'> Temperatura: { weatherForecast.current.temp_c } </p>
                   <p> sensação térmica: {weatherForecast.current.feelslike_c} </p>
