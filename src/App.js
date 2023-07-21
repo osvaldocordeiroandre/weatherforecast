@@ -1,5 +1,8 @@
 import React from 'react'
 import './index.css'
+import './App.css'
+
+import { MdDarkMode } from 'react-icons/md'
 
 import { useState } from 'react'
 
@@ -9,6 +12,8 @@ export default function App() {
 
   const [city, setCity] = useState("");
   const [weatherForecast, setWeatherForecast] = useState(null);
+  const [theme, setTheme] = useState('dark-mode')
+  const [newColor, setNewColor] = useState('white')
 
   function handleKeyDown(e) {
     if (e.key === 'Enter'){
@@ -29,12 +34,24 @@ export default function App() {
     });
   };
 
+  const Addthema = () =>{
+    const newTheme = theme === 'dark-mode'? 'container-light' : 'dark-mode';
+    setTheme(newTheme)
+  }
+
+  const ColorMoon = () => {
+    const addNewColor = newColor === 'white' ? 'black' : 'white'
+    setNewColor(addNewColor)
+  }
+
   return (
-    <div>
+    <div className='app' id={theme}>
 
-      <main className='container'>
+      <div className="mode" onClick={ColorMoon}> <MdDarkMode onClick={Addthema} cursor={'pointer'} color={newColor} size={30}/> </div>
 
-        <div className='conteudo'>
+      <main className='container' id={theme}>
+
+        <div className='conteudo' id={theme}>
 
           <img className='logo' src={Logo} alt="" />
           <p className='lead-text'> Espero que o clima esteja perfeito para você ♥ </p>
